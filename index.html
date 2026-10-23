@@ -1,0 +1,1885 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#183d32">
+    <meta name="description" content="اكتشف أشهى الأطباق المغربية التقليدية في مطعم مذاق المغرب. تصفح القائمة واطلب وجبتك عبر واتساب.">
+
+    <title>مذاق المغرب | أشهى المأكولات المغربية</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #183d32;
+            --primary-light: #285847;
+            --gold: #d8a64e;
+            --cream: #fffaf0;
+            --background: #f8f7f2;
+            --text: #25342d;
+            --muted: #777f78;
+            --white: #ffffff;
+            --border: #e9e7df;
+            --whatsapp: #20b866;
+            --shadow: 0 10px 30px rgba(24, 61, 50, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            object-fit: cover;
+        }
+
+        button,
+        input {
+            font: inherit;
+        }
+
+        button,
+        a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        .container {
+            width: min(1120px, calc(100% - 36px));
+            margin-inline: auto;
+        }
+
+        .topbar {
+            background: var(--primary);
+            color: #fff;
+            text-align: center;
+            padding: 7px 12px;
+            font-size: 12px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.97);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .navbar {
+            min-height: 76px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+
+        .brand-icon {
+            width: 44px;
+            height: 44px;
+            display: grid;
+            place-items: center;
+            background: var(--primary);
+            color: var(--gold);
+            border-radius: 14px;
+            font-size: 24px;
+        }
+
+        .brand-name {
+            color: var(--primary);
+            font-size: 20px;
+            font-weight: 800;
+            line-height: 1.4;
+        }
+
+        .brand-subtitle {
+            color: var(--muted);
+            font-size: 11px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .nav-links a:hover {
+            color: #b78128;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cart-button {
+            position: relative;
+            border: 1px solid var(--border);
+            background: #fff;
+            color: var(--primary);
+            padding: 9px 13px;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .cart-count {
+            display: inline-grid;
+            place-items: center;
+            min-width: 22px;
+            height: 22px;
+            margin-right: 5px;
+            padding: 0 5px;
+            border-radius: 50px;
+            background: var(--gold);
+            color: #2a281e;
+            font-size: 11px;
+        }
+
+        .hero {
+            padding: 48px 0 58px;
+            background:
+                radial-gradient(ellipse at top left, #f5ead0 0%, transparent 45%),
+                var(--cream);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 44px;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            padding: 6px 13px;
+            border-radius: 50px;
+            background: #e9f0e9;
+            color: var(--primary);
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 17px;
+        }
+
+        .hero h1 {
+            color: var(--primary);
+            font-size: clamp(32px, 4.2vw, 53px);
+            line-height: 1.45;
+            font-weight: 800;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 span {
+            color: #c08b32;
+        }
+
+        .hero-description {
+            max-width: 490px;
+            color: #68746b;
+            font-size: 15px;
+            margin-bottom: 25px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            border: 0;
+            border-radius: 12px;
+            padding: 12px 21px;
+            font-size: 13px;
+            font-weight: 800;
+            transition: 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-light);
+        }
+
+        .btn-outline {
+            background: white;
+            color: var(--primary);
+            border: 1px solid var(--border);
+        }
+
+        .hero-image-wrap {
+            position: relative;
+        }
+
+        .hero-image {
+            height: 390px;
+            border-radius: 26px;
+            object-fit: cover;
+            box-shadow: 0 22px 50px rgba(24, 61, 50, 0.17);
+        }
+
+        .hero-badge {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: white;
+            padding: 12px 18px;
+            border-radius: 14px;
+            box-shadow: var(--shadow);
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .hero-badge small {
+            display: block;
+            color: var(--muted);
+            font-size: 11px;
+            font-weight: 500;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            padding: 30px 0;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 17px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 15px;
+        }
+
+        .feature-icon {
+            display: grid;
+            place-items: center;
+            width: 44px;
+            height: 44px;
+            flex-shrink: 0;
+            border-radius: 13px;
+            background: #f6efdf;
+            font-size: 22px;
+        }
+
+        .feature strong {
+            display: block;
+            color: var(--primary);
+            font-size: 13px;
+        }
+
+        .feature small {
+            display: block;
+            color: var(--muted);
+            font-size: 11px;
+        }
+
+        section.menu-section {
+            padding: 55px 0;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .section-heading .mini-title {
+            color: #b78128;
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .section-heading h2 {
+            color: var(--primary);
+            font-size: clamp(25px, 3vw, 35px);
+            font-weight: 800;
+            margin: 4px 0 7px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .menu-toolbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-bottom: 25px;
+        }
+
+        .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+        }
+
+        .filter-btn {
+            padding: 9px 17px;
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            background: white;
+            color: var(--text);
+            font-size: 12px;
+            font-weight: 700;
+            transition: 0.2s;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+        }
+
+        .search-input {
+            width: 220px;
+            max-width: 100%;
+            padding: 10px 13px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            outline: none;
+            background: white;
+            color: var(--text);
+            font-size: 12px;
+        }
+
+        .search-input:focus {
+            border-color: var(--primary-light);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .food-card {
+            min-width: 0;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .food-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow);
+        }
+
+        .food-image-wrap {
+            height: 205px;
+            position: relative;
+            overflow: hidden;
+            background: #eee9de;
+        }
+
+        .food-image {
+            height: 100%;
+            transition: transform 0.4s;
+        }
+
+        .food-card:hover .food-image {
+            transform: scale(1.04);
+        }
+
+        .food-tag {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            padding: 5px 10px;
+            background: white;
+            color: var(--primary);
+            border-radius: 50px;
+            font-size: 10px;
+            font-weight: 800;
+        }
+
+        .food-info {
+            padding: 17px;
+        }
+
+        .food-info h3 {
+            color: var(--primary);
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .food-description {
+            min-height: 44px;
+            color: var(--muted);
+            font-size: 11px;
+            line-height: 1.9;
+        }
+
+        .food-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .food-price {
+            color: #a97421;
+            font-size: 17px;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+
+        .food-price small {
+            font-size: 10px;
+        }
+
+        .add-button {
+            border: 0;
+            border-radius: 10px;
+            background: var(--primary);
+            color: white;
+            padding: 9px 12px;
+            font-size: 11px;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+
+        .add-button:hover {
+            background: var(--primary-light);
+        }
+
+        .empty-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 45px 15px;
+            color: var(--muted);
+            background: white;
+            border-radius: 15px;
+        }
+
+        .about-section {
+            padding: 60px 0;
+            background: #edf1e9;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .about-image {
+            height: 340px;
+            border-radius: 22px;
+        }
+
+        .about-text .mini-title {
+            color: #b78128;
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .about-text h2 {
+            color: var(--primary);
+            font-size: 30px;
+            line-height: 1.6;
+            margin: 7px 0 13px;
+        }
+
+        .about-text p {
+            color: #69756b;
+            font-size: 13px;
+            margin-bottom: 13px;
+        }
+
+        .contact-section {
+            padding: 60px 0;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .contact-card {
+            padding: 24px 18px;
+            text-align: center;
+            border-radius: 17px;
+            background: white;
+            border: 1px solid var(--border);
+        }
+
+        .contact-card .icon {
+            font-size: 28px;
+            margin-bottom: 7px;
+        }
+
+        .contact-card h3 {
+            color: var(--primary);
+            font-size: 15px;
+            margin-bottom: 7px;
+        }
+
+        .contact-card p,
+        .contact-card a {
+            color: var(--muted);
+            font-size: 12px;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-card a:hover {
+            color: var(--primary);
+        }
+
+        .contact-note {
+            text-align: center;
+            margin-top: 25px;
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        footer {
+            background: #122f27;
+            color: #fff;
+            padding: 30px 0 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .footer-content h3 {
+            font-size: 18px;
+            color: var(--gold);
+        }
+
+        .footer-content p {
+            color: #d0dbd4;
+            font-size: 11px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.13);
+            text-align: center;
+            margin-top: 22px;
+            padding-top: 16px;
+            color: #c4d0c8;
+            font-size: 10px;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 18px;
+            left: 18px;
+            z-index: 90;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            background: var(--whatsapp);
+            color: white;
+            padding: 12px 17px;
+            border-radius: 50px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.17);
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .whatsapp-float:hover {
+            background: #179d55;
+        }
+
+        /* سلة الطلبات */
+        .cart-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 200;
+            background: rgba(0, 0, 0, 0.42);
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.25s;
+        }
+
+        .cart-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .cart-panel {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: min(430px, 100%);
+            height: 100%;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            transform: translateX(105%);
+            transition: transform 0.3s ease;
+        }
+
+        .cart-overlay.open .cart-panel {
+            transform: translateX(0);
+        }
+
+        .cart-header {
+            padding: 19px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .cart-header h2 {
+            font-size: 19px;
+            color: var(--primary);
+        }
+
+        .close-cart {
+            border: 0;
+            background: #f2f2ee;
+            border-radius: 9px;
+            width: 36px;
+            height: 36px;
+            font-size: 20px;
+        }
+
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            padding: 15px;
+        }
+
+        .cart-empty {
+            padding: 45px 10px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            padding: 13px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .cart-item h4 {
+            font-size: 13px;
+            color: var(--primary);
+        }
+
+        .cart-item p {
+            font-size: 11px;
+            color: #a97421;
+            font-weight: 800;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            flex-shrink: 0;
+        }
+
+        .quantity-controls button {
+            width: 29px;
+            height: 29px;
+            border: 1px solid var(--border);
+            background: white;
+            border-radius: 8px;
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        .cart-footer {
+            padding: 18px;
+            border-top: 1px solid var(--border);
+            background: #fff;
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        .cart-total span:last-child {
+            color: #a97421;
+            font-size: 20px;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            background: var(--whatsapp);
+            color: white;
+            border: 0;
+            border-radius: 12px;
+            padding: 13px;
+            font-weight: 800;
+        }
+
+        .checkout-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .toast {
+            position: fixed;
+            z-index: 300;
+            bottom: 82px;
+            right: 50%;
+            transform: translate(50%, 20px);
+            opacity: 0;
+            visibility: hidden;
+            background: #183d32;
+            color: white;
+            padding: 11px 19px;
+            border-radius: 10px;
+            font-size: 12px;
+            box-shadow: var(--shadow);
+            transition: 0.25s;
+            text-align: center;
+            width: max-content;
+            max-width: calc(100% - 30px);
+        }
+
+        .toast.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translate(50%, 0);
+        }
+
+        @media (max-width: 850px) {
+            .nav-links {
+                gap: 13px;
+            }
+
+            .hero-grid {
+                gap: 25px;
+            }
+
+            .hero-image {
+                height: 330px;
+            }
+
+            .menu-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 15px;
+            }
+
+            .food-image-wrap {
+                height: 190px;
+            }
+
+            .about-grid {
+                gap: 25px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                width: calc(100% - 28px);
+            }
+
+            .topbar {
+                font-size: 10px;
+            }
+
+            .navbar {
+                min-height: 66px;
+                gap: 8px;
+            }
+
+            .brand {
+                gap: 7px;
+            }
+
+            .brand-icon {
+                width: 36px;
+                height: 36px;
+                border-radius: 11px;
+                font-size: 19px;
+            }
+
+            .brand-name {
+                font-size: 15px;
+            }
+
+            .brand-subtitle {
+                font-size: 9px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-actions {
+                gap: 6px;
+            }
+
+            .cart-button {
+                padding: 7px 9px;
+                font-size: 11px;
+            }
+
+            .cart-count {
+                min-width: 19px;
+                height: 19px;
+                font-size: 10px;
+            }
+
+            .hero {
+                padding: 30px 0 35px;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+                line-height: 1.5;
+            }
+
+            .hero-description {
+                font-size: 13px;
+            }
+
+            .hero-image {
+                height: 255px;
+                border-radius: 19px;
+            }
+
+            .hero-badge {
+                bottom: 12px;
+                right: 12px;
+                padding: 9px 13px;
+                font-size: 11px;
+            }
+
+            .btn {
+                padding: 11px 15px;
+                font-size: 12px;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+                gap: 10px;
+                padding: 20px 0;
+            }
+
+            .feature {
+                padding: 12px;
+            }
+
+            section.menu-section {
+                padding: 38px 0;
+            }
+
+            .section-heading {
+                margin-bottom: 20px;
+            }
+
+            .section-heading h2 {
+                font-size: 26px;
+            }
+
+            .menu-toolbar {
+                align-items: stretch;
+                margin-bottom: 19px;
+            }
+
+            .filter-buttons {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 7px;
+                width: 100%;
+            }
+
+            .filter-btn {
+                padding: 9px 5px;
+                font-size: 11px;
+            }
+
+            .search-input {
+                width: 100%;
+            }
+
+            .menu-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 10px;
+            }
+
+            .food-card {
+                border-radius: 13px;
+            }
+
+            .food-image-wrap {
+                height: 125px;
+            }
+
+            .food-tag {
+                top: 7px;
+                right: 7px;
+                font-size: 9px;
+                padding: 3px 7px;
+            }
+
+            .food-info {
+                padding: 10px;
+            }
+
+            .food-info h3 {
+                font-size: 13px;
+                line-height: 1.6;
+            }
+
+            .food-description {
+                font-size: 10px;
+                line-height: 1.7;
+                min-height: 48px;
+            }
+
+            .food-bottom {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 8px;
+                margin-top: 10px;
+            }
+
+            .food-price {
+                font-size: 15px;
+            }
+
+            .add-button {
+                width: 100%;
+                padding: 9px 5px;
+                font-size: 10px;
+            }
+
+            .about-section {
+                padding: 40px 0;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 22px;
+            }
+
+            .about-image {
+                height: 235px;
+            }
+
+            .about-text h2 {
+                font-size: 25px;
+            }
+
+            .contact-section {
+                padding: 40px 0;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 11px;
+            }
+
+            .contact-card {
+                padding: 18px 13px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .whatsapp-float {
+                bottom: 12px;
+                left: 12px;
+                padding: 10px 13px;
+                font-size: 11px;
+            }
+
+            .toast {
+                bottom: 72px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="topbar">
+        🍽️ مذاق مغربي أصيل، محضّر بكل حب — مرحبًا بكم!
+    </div>
+
+    <header>
+        <div class="container navbar">
+
+            <a href="#home" class="brand" aria-label="الصفحة الرئيسية">
+                <div class="brand-icon">🍲</div>
+                <div>
+                    <div class="brand-name" id="brandName">مذاق المغرب</div>
+                    <div class="brand-subtitle">أصالة المطبخ المغربي</div>
+                </div>
+            </a>
+
+            <nav class="nav-links" aria-label="القائمة الرئيسية">
+                <a href="#home">الرئيسية</a>
+                <a href="#menu">قائمة الطعام</a>
+                <a href="#about">من نحن</a>
+                <a href="#contact">اتصل بنا</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="cart-button" id="openCart" type="button">
+                    🛒 السلة <span class="cart-count" id="cartCount">0</span>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <main>
+
+        <section class="hero" id="home">
+            <div class="container hero-grid">
+
+                <div class="hero-content">
+                    <span class="eyebrow">مرحبًا بكم في عالم النكهات المغربية</span>
+
+                    <h1>
+                        مذاق أصيل<br>
+                        <span>يجمعنا حول المائدة</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        استمتع بأشهى الأطباق المغربية المحضّرة بعناية،
+                        من الطاجين التقليدي إلى الكسكس الأصيل،
+                        بنكهات تذكّرك بدفء البيت المغربي.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="#menu" class="btn btn-primary">🍽️ اكتشف قائمة الطعام</a>
+                        <a href="#contact" class="btn btn-outline">📍 معلومات المطعم</a>
+                    </div>
+                </div>
+
+                <div class="hero-image-wrap">
+                    <img
+                        class="hero-image"
+                        src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1000&q=85"
+                        alt="طبق طعام شهي"
+                        fetchpriority="high"
+                    >
+                    <div class="hero-badge">
+                        ❤️ نكهة تستحق التجربة
+                        <small>أطباق مغربية بحب وعناية</small>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="features">
+
+                <div class="feature">
+                    <div class="feature-icon">🥘</div>
+                    <div>
+                        <strong>نكهات مغربية أصيلة</strong>
+                        <small>أطباق مستوحاة من تراثنا</small>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">🌿</div>
+                    <div>
+                        <strong>مكونات مختارة</strong>
+                        <small>اهتمام بالجودة والتفاصيل</small>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">📱</div>
+                    <div>
+                        <strong>طلب سهل وسريع</strong>
+                        <small>أرسل طلبك عبر واتساب</small>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <section class="menu-section" id="menu">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="mini-title">قائمتنا المميزة</span>
+                    <h2>اكتشف أشهى أطباقنا</h2>
+                    <p>اختر وجبتك المفضلة وأضفها إلى سلة الطلبات.</p>
+                </div>
+
+                <div class="menu-toolbar">
+
+                    <div class="filter-buttons" aria-label="تصنيف الوجبات">
+                        <button class="filter-btn active" data-category="all" type="button">جميع الأطباق</button>
+                        <button class="filter-btn" data-category="main" type="button">الوجبات الرئيسية</button>
+                        <button class="filter-btn" data-category="drinks" type="button">المشروبات</button>
+                        <button class="filter-btn" data-category="desserts" type="button">الحلويات</button>
+                    </div>
+
+                    <input
+                        type="search"
+                        class="search-input"
+                        id="searchInput"
+                        placeholder="🔎 ابحث عن وجبتك..."
+                        aria-label="البحث في قائمة الطعام"
+                    >
+
+                </div>
+
+                <div class="menu-grid" id="menuGrid">
+                    <!-- تُنشأ بطاقات الطعام بواسطة JavaScript -->
+                </div>
+
+            </div>
+        </section>
+
+        <section class="about-section" id="about">
+            <div class="container about-grid">
+
+                <div>
+                    <img
+                        class="about-image"
+                        src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=900&q=85"
+                        alt="تحضير الطعام في المطبخ"
+                        loading="lazy"
+                    >
+                </div>
+
+                <div class="about-text">
+                    <span class="mini-title">حكايتنا</span>
+                    <h2>المطبخ المغربي... تراث يجمع الأجيال</h2>
+
+                    <p>
+                        في مطعم مذاق المغرب، نؤمن بأن الطعام ليس مجرد وجبة،
+                        بل تجربة تجمع العائلة والأصدقاء حول مائدة مليئة بالمحبة.
+                    </p>
+
+                    <p>
+                        نقدم مجموعة من الأطباق المستوحاة من المطبخ المغربي،
+                        مع اهتمام بطريقة التقديم وجودة المكونات.
+                    </p>
+
+                    <a href="#menu" class="btn btn-primary">تصفّح قائمتنا ←</a>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="contact-section" id="contact">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="mini-title">نحن هنا من أجلك</span>
+                    <h2>تواصل معنا</h2>
+                    <p>يسعدنا استقبالكم والإجابة عن استفساراتكم.</p>
+                </div>
+
+                <div class="contact-grid">
+
+                    <div class="contact-card">
+                        <div class="icon">📍</div>
+                        <h3>عنوان المطعم</h3>
+                        <p id="restaurantAddress">شارع محمد الخامس، الدار البيضاء، المغرب</p>
+                        <a id="mapLink" href="https://www.google.com/maps/search/?api=1&query=Casablanca%2C+Morocco" target="_blank" rel="noopener noreferrer">
+                            افتح الموقع على الخريطة ←
+                        </a>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="icon">📞</div>
+                        <h3>الهاتف وواتساب</h3>
+                        <p id="restaurantPhone">+212 600 000 000</p>
+                        <a id="phoneLink" href="tel:+212600000000">اتصل بنا الآن ←</a>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="icon">🕒</div>
+                        <h3>ساعات العمل</h3>
+                        <p id="workingHours">يوميًا من 12:00 ظهرًا إلى 11:00 ليلًا</p>
+                        <p>نرحب بكم طوال ساعات العمل.</p>
+                    </div>
+
+                </div>
+
+                <p class="contact-note">
+                    ملاحظة: يُرجى التأكد من ساعات العمل والعنوان قبل زيارة المطعم.
+                </p>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+
+            <div class="footer-content">
+                <div>
+                    <h3 id="footerName">🍲 مذاق المغرب</h3>
+                    <p>أصالة النكهة المغربية في كل طبق.</p>
+                </div>
+
+                <a href="#menu" class="btn btn-outline">اطلب وجبتك الآن</a>
+            </div>
+
+            <div class="footer-bottom">
+                جميع الحقوق محفوظة © <span id="currentYear"></span>
+                <span id="copyrightName">مذاق المغرب</span>
+            </div>
+
+        </div>
+    </footer>
+
+    <a href="#" id="floatingWhatsApp" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <span>💬</span>
+        <span>تواصل عبر واتساب</span>
+    </a>
+
+    <!-- نافذة سلة الطلبات -->
+    <div class="cart-overlay" id="cartOverlay" aria-hidden="true">
+
+        <div class="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+
+            <div class="cart-header">
+                <h2 id="cartTitle">🛒 سلة طلباتك</h2>
+                <button class="close-cart" id="closeCart" type="button" aria-label="إغلاق السلة">×</button>
+            </div>
+
+            <div class="cart-items" id="cartItems">
+                <div class="cart-empty">سلتك فارغة حاليًا.</div>
+            </div>
+
+            <div class="cart-footer">
+
+                <div class="cart-total">
+                    <span>المجموع</span>
+                    <span id="cartTotal">0 درهم</span>
+                </div>
+
+                <button class="checkout-btn" id="checkoutBtn" type="button" disabled>
+                    إرسال الطلب عبر واتساب
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script>
+        "use strict";
+
+        /*
+        ============================================================
+        إعدادات المطعم: عدّل هذه البيانات حسب المطعم الحقيقي.
+        ============================================================
+        */
+
+        const RESTAURANT = {
+            name: "مذاق المغرب",
+
+            // اكتب رقم واتساب مع رمز الدولة دون علامة + أو مسافات.
+            // مثال المغرب: 212612345678
+            whatsapp: "212600000000",
+
+            // رقم الاتصال بصيغة دولية مناسبة لرابط tel:
+            phone: "+212600000000",
+
+            address: "شارع محمد الخامس، الدار البيضاء، المغرب",
+
+            // اكتب ساعات العمل الحقيقية.
+            hours: "يوميًا من 12:00 ظهرًا إلى 11:00 ليلًا",
+
+            // غيّر هذا الرابط إلى الموقع الحقيقي للمطعم على خرائط Google.
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=Casablanca%2C+Morocco",
+
+            currency: "درهم"
+        };
+
+        /*
+        ============================================================
+        قائمة الطعام:
+        category: main = وجبات رئيسية
+        category: drinks = مشروبات
+        category: desserts = حلويات
+
+        لتعديل طبق: غيّر الاسم والسعر والوصف والصورة هنا.
+        ============================================================
+        */
+
+        const MENU_ITEMS = [
+            {
+                id: 1,
+                name: "طاجين الدجاج بالزيتون",
+                category: "main",
+                price: 65,
+                description: "دجاج متبّل بالبهارات المغربية مع الزيتون والليمون المصير.",
+                image: "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=700&q=80",
+                tag: "الأكثر طلبًا"
+            },
+            {
+                id: 2,
+                name: "الكسكس المغربي",
+                category: "main",
+                price: 70,
+                description: "كسكس بالخضروات الطازجة والحمص مع مرق غني بالنكهة.",
+                image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=700&q=80",
+                tag: "طبق تقليدي"
+            },
+            {
+                id: 3,
+                name: "الطاجين باللحم والبرقوق",
+                category: "main",
+                price: 85,
+                description: "لحم مطهو ببطء مع البرقوق واللوز ولمسة من القرفة.",
+                image: "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=700&q=80",
+                tag: "اختيار الشيف"
+            },
+            {
+                id: 4,
+                name: "البسطيلة بالدجاج",
+                category: "main",
+                price: 55,
+                description: "عجينة مورّقة بحشوة الدجاج واللوز والتوابل المغربية.",
+                image: "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=700&q=80",
+                tag: "نكهة مغربية"
+            },
+            {
+                id: 5,
+                name: "حريرة مغربية",
+                category: "main",
+                price: 20,
+                description: "شوربة مغربية بالطماطم والعدس والحمص والأعشاب.",
+                image: "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=700&q=80",
+                tag: "طازجة يوميًا"
+            },
+            {
+                id: 6,
+                name: "مشاوي مشكلة",
+                category: "main",
+                price: 90,
+                description: "تشكيلة من المشاوي المتبّلة مع الخضروات المشوية.",
+                image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80",
+                tag: "طبق مميز"
+            },
+            {
+                id: 7,
+                name: "شاي مغربي بالنعناع",
+                category: "drinks",
+                price: 12,
+                description: "شاي أخضر بالنعناع الطازج بالطريقة المغربية التقليدية.",
+                image: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=700&q=80",
+                tag: "تقليدي"
+            },
+            {
+                id: 8,
+                name: "عصير البرتقال",
+                category: "drinks",
+                price: 18,
+                description: "عصير برتقال منعش، يُحضّر عند الطلب.",
+                image: "https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=700&q=80",
+                tag: "منعش"
+            },
+            {
+                id: 9,
+                name: "عصير الأفوكادو",
+                category: "drinks",
+                price: 25,
+                description: "مشروب الأفوكادو الكريمي المحضّر طازجًا.",
+                image: "https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&w=700&q=80",
+                tag: "طازج"
+            },
+            {
+                id: 10,
+                name: "سلطة فواكه",
+                category: "desserts",
+                price: 22,
+                description: "تشكيلة من الفواكه الموسمية الطازجة.",
+                image: "https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?auto=format&fit=crop&w=700&q=80",
+                tag: "خفيفة ولذيذة"
+            },
+            {
+                id: 11,
+                name: "كعب الغزال",
+                category: "desserts",
+                price: 15,
+                description: "حلوى مغربية تقليدية بحشوة اللوز وماء الزهر.",
+                image: "https://images.unsplash.com/photo-1519676867240-f03562e64548?auto=format&fit=crop&w=700&q=80",
+                tag: "حلويات مغربية"
+            },
+            {
+                id: 12,
+                name: "بريوات باللوز",
+                category: "desserts",
+                price: 18,
+                description: "بريوات مقرمشة بحشوة اللوز ولمسة من العسل.",
+                image: "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=700&q=80",
+                tag: "حلوى تقليدية"
+            }
+        ];
+
+        /*
+        ============================================================
+        منطق الموقع: عرض الطعام والبحث والسلة وواتساب.
+        ============================================================
+        */
+
+        const menuGrid = document.getElementById("menuGrid");
+        const searchInput = document.getElementById("searchInput");
+        const filterButtons = document.querySelectorAll(".filter-btn");
+
+        const cartOverlay = document.getElementById("cartOverlay");
+        const cartItemsContainer = document.getElementById("cartItems");
+        const cartCountElement = document.getElementById("cartCount");
+        const cartTotalElement = document.getElementById("cartTotal");
+        const checkoutBtn = document.getElementById("checkoutBtn");
+
+        let activeCategory = "all";
+        let cart = [];
+        let toastTimer;
+
+        function formatPrice(price) {
+            return `${price} ${RESTAURANT.currency}`;
+        }
+
+        function getItemById(id) {
+            return MENU_ITEMS.find(item => item.id === id);
+        }
+
+        function applyRestaurantSettings() {
+            document.title = `${RESTAURANT.name} | أشهى المأكولات المغربية`;
+
+            document.getElementById("brandName").textContent = RESTAURANT.name;
+            document.getElementById("footerName").textContent = `🍲 ${RESTAURANT.name}`;
+            document.getElementById("copyrightName").textContent = RESTAURANT.name;
+
+            document.getElementById("restaurantAddress").textContent = RESTAURANT.address;
+            document.getElementById("restaurantPhone").textContent = RESTAURANT.phone;
+            document.getElementById("workingHours").textContent = RESTAURANT.hours;
+
+            document.getElementById("phoneLink").href = `tel:${RESTAURANT.phone}`;
+            document.getElementById("mapLink").href = RESTAURANT.mapUrl;
+
+            const whatsappNumber = RESTAURANT.whatsapp.replace(/\D/g, "");
+
+            document.getElementById("floatingWhatsApp").href =
+                `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+                    `مرحبًا، أود الاستفسار عن مطعم ${RESTAURANT.name}.`
+                )}`;
+
+            document.getElementById("currentYear").textContent =
+                new Date().getFullYear();
+        }
+
+        function renderMenu() {
+            const query = searchInput.value.trim().toLocaleLowerCase("ar");
+
+            const filteredItems = MENU_ITEMS.filter(item => {
+                const matchesCategory =
+                    activeCategory === "all" || item.category === activeCategory;
+
+                const matchesSearch =
+                    item.name.toLocaleLowerCase("ar").includes(query) ||
+                    item.description.toLocaleLowerCase("ar").includes(query);
+
+                return matchesCategory && matchesSearch;
+            });
+
+            if (filteredItems.length === 0) {
+                menuGrid.innerHTML = `
+                    <div class="empty-results">
+                        <div style="font-size:32px;margin-bottom:10px;">🔎</div>
+                        <strong>لم نجد أي طبق بهذه المواصفات.</strong>
+                        <p>جرّب اسمًا آخر أو اختر قسمًا مختلفًا.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            menuGrid.innerHTML = filteredItems.map(item => `
+                <article class="food-card">
+
+                    <div class="food-image-wrap">
+                        <img
+                            class="food-image"
+                            src="${item.image}"
+                            alt="${item.name}"
+                            loading="lazy"
+                        >
+                        <span class="food-tag">${item.tag}</span>
+                    </div>
+
+                    <div class="food-info">
+                        <h3>${item.name}</h3>
+
+                        <p class="food-description">${item.description}</p>
+
+                        <div class="food-bottom">
+                            <span class="food-price">
+                                ${formatPrice(item.price)}
+                            </span>
+
+                            <button
+                                class="add-button"
+                                type="button"
+                                data-add="${item.id}"
+                            >
+                                + أضف إلى السلة
+                            </button>
+                        </div>
+                    </div>
+
+                </article>
+            `).join("");
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById("toast");
+
+            toast.textContent = message;
+            toast.classList.add("show");
+
+            clearTimeout(toastTimer);
+
+            toastTimer = setTimeout(() => {
+                toast.classList.remove("show");
+            }, 2400);
+        }
+
+        function addToCart(id) {
+            const item = getItemById(id);
+
+            if (!item) {
+                return;
+            }
+
+            const existingItem = cart.find(cartItem => cartItem.id === id);
+
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    id: item.id,
+                    quantity: 1
+                });
+            }
+
+            renderCart();
+            showToast(`تمت إضافة ${item.name} إلى السلة.`);
+        }
+
+        function changeQuantity(id, amount) {
+            const cartItem = cart.find(item => item.id === id);
+
+            if (!cartItem) {
+                return;
+            }
+
+            cartItem.quantity += amount;
+
+            if (cartItem.quantity <= 0) {
+                cart = cart.filter(item => item.id !== id);
+            }
+
+            renderCart();
+        }
+
+        function getCartCount() {
+            return cart.reduce((total, item) => total + item.quantity, 0);
+        }
+
+        function getCartTotal() {
+            return cart.reduce((total, cartItem) => {
+                const item = getItemById(cartItem.id);
+
+                return total + (item ? item.price * cartItem.quantity : 0);
+            }, 0);
+        }
+
+        function renderCart() {
+            cartCountElement.textContent = getCartCount();
+            cartTotalElement.textContent = formatPrice(getCartTotal());
+
+            checkoutBtn.disabled = cart.length === 0;
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = `
+                    <div class="cart-empty">
+                        <div style="font-size:38px;margin-bottom:10px;">🛒</div>
+                        سلتك فارغة حاليًا.<br>
+                        أضف بعض الأطباق من القائمة.
+                    </div>
+                `;
+                return;
+            }
+
+            cartItemsContainer.innerHTML = cart.map(cartItem => {
+                const item = getItemById(cartItem.id);
+
+                if (!item) {
+                    return "";
+                }
+
+                return `
+                    <div class="cart-item">
+
+                        <div>
+                            <h4>${item.name}</h4>
+                            <p>${formatPrice(item.price * cartItem.quantity)}</p>
+                        </div>
+
+                        <div class="quantity-controls">
+                            <button
+                                type="button"
+                                data-decrease="${item.id}"
+                                aria-label="تقليل الكمية"
+                            >−</button>
+
+                            <span>${cartItem.quantity}</span>
+
+                            <button
+                                type="button"
+                                data-increase="${item.id}"
+                                aria-label="زيادة الكمية"
+                            >+</button>
+                        </div>
+
+                    </div>
+                `;
+            }).join("");
+        }
+
+        function openCart() {
+            cartOverlay.classList.add("open");
+            cartOverlay.setAttribute("aria-hidden", "false");
+            document.body.style.overflow = "hidden";
+
+            document.getElementById("closeCart").focus();
+        }
+
+        function closeCart() {
+            cartOverlay.classList.remove("open");
+            cartOverlay.setAttribute("aria-hidden", "true");
+            document.body.style.overflow = "";
+        }
+
+        function checkoutWhatsApp() {
+            if (cart.length === 0) {
+                showToast("أضف طبقًا واحدًا على الأقل قبل إرسال الطلب.");
+                return;
+            }
+
+            const whatsappNumber = RESTAURANT.whatsapp.replace(/\D/g, "");
+
+            if (!/^\d{8,15}$/.test(whatsappNumber)) {
+                showToast("يرجى ضبط رقم واتساب المطعم في إعدادات الموقع.");
+                return;
+            }
+
+            const orderLines = cart.map(cartItem => {
+                const item = getItemById(cartItem.id);
+
+                return item
+                    ? `• ${item.name} × ${cartItem.quantity} = ${formatPrice(item.price * cartItem.quantity)}`
+                    : "";
+            }).filter(Boolean);
+
+            const message = [
+                `السلام عليكم، أريد طلب الطعام من ${RESTAURANT.name}.`,
+                "",
+                "تفاصيل الطلب:",
+                ...orderLines,
+                "",
+                `المجموع: ${formatPrice(getCartTotal())}`,
+                "",
+                "يرجى تأكيد الطلب وبيان تكلفة التوصيل إن وجدت."
+            ].join("\n");
+
+            const whatsappUrl =
+                `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+            const openedWindow = window.open(
+                whatsappUrl,
+                "_blank",
+                "noopener,noreferrer"
+            );
+
+            if (!openedWindow) {
+                window.location.href = whatsappUrl;
+            }
+        }
+
+        /*
+        ============================================================
+        ربط الأزرار بالأحداث.
+        ============================================================
+        */
+
+        filterButtons.forEach(button => {
+            button.addEventListener("click", () => {
+                activeCategory = button.dataset.category;
+
+                filterButtons.forEach(filterButton => {
+                    filterButton.classList.toggle(
+                        "active",
+                        filterButton === button
+                    );
+                });
+
+                renderMenu();
+            });
+        });
+
+        searchInput.addEventListener("input", renderMenu);
+
+        menuGrid.addEventListener("click", event => {
+            const button = event.target.closest("[data-add]");
+
+            if (!button) {
+                return;
+            }
+
+            addToCart(Number(button.dataset.add));
+        });
+
+        cartItemsContainer.addEventListener("click", event => {
+            const increaseButton = event.target.closest("[data-increase]");
+            const decreaseButton = event.target.closest("[data-decrease]");
+
+            if (increaseButton) {
+                changeQuantity(Number(increaseButton.dataset.increase), 1);
+            }
+
+            if (decreaseButton) {
+                changeQuantity(Number(decreaseButton.dataset.decrease), -1);
+            }
+        });
+
+        document.getElementById("openCart").addEventListener("click", openCart);
+        document.getElementById("closeCart").addEventListener("click", closeCart);
+
+        cartOverlay.addEventListener("click", event => {
+            if (event.target === cartOverlay) {
+                closeCart();
+            }
+        });
+
+        document.addEventListener("keydown", event => {
+            if (event.key === "Escape") {
+                closeCart();
+            }
+        });
+
+        checkoutBtn.addEventListener("click", checkoutWhatsApp);
+
+        document.getElementById("floatingWhatsApp").addEventListener("click", event => {
+            const whatsappNumber = RESTAURANT.whatsapp.replace(/\D/g, "");
+
+            if (!/^\d{8,15}$/.test(whatsappNumber)) {
+                event.preventDefault();
+                showToast("يرجى ضبط رقم واتساب المطعم أولًا.");
+            }
+        });
+
+        /*
+        ============================================================
+        تشغيل الموقع.
+        ============================================================
+        */
+
+        applyRestaurantSettings();
+        renderMenu();
+        renderCart();
+    </script>
+
+</body>
+</html>
